@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Moodys_Takehome_Challenge">
+    <test name="API Test">
+        <classes>
+            <class name="api.RestAssuredAPI">
+                <methods>
+                    <include name="createUser"/>
+                    <include name="listUsers"/>
+                    <include name="getSpecificUser"/>
+                </methods>
+            </class> <!-- api.RestAssuredAPI -->
+        </classes>
+    </test> <!-- API Test -->
+
+    <test name="PaginationHelper Test">
+        <classes>
+            <class name="paginationHelper.Driver">
+                <methods>
+                    <include name="createPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Moodys_Takehome_Challenge -->

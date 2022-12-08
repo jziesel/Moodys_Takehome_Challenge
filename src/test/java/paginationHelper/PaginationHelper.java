@@ -49,16 +49,4 @@ public class PaginationHelper {
         return getHowManyItems();
     }
 
-    public int pageItemCount(int idx) {
-
-        // placeholder
-        return 0;
-    }
-
-    public int pageIndex(int idx) {
-
-        // placeholder
-        return 0;
-    }
-
 }
