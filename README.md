@@ -42,3 +42,22 @@ Testing objectives:
 4. Now delete the user. Confirm the previously generated data is no longer accessible. Some additional notes:
    
 Even though we recommend using TestNG framework, it's up to the candidate to go for any other alternative.
+
+# My Take on the Challenge
+
+Per the Challenge request, I did utilize Java and TestNG. I also decided to use Maven, json-simple, and gson libraries.
+
+Part 1:
+
+Wanted to extend the PaginationHelper class from the Driver class. Ran into some issues with this (TestNG-related? need to check that out). From reading the requirements, I initially thought about creating one instance of the class from the Driver class, but some of the examples such as .pageItemCount() and .pageIndex() made me question my interpretation. A few questions I would have for the statement:
+
+helper = PaginationHelper.new(['a','b','c','d','e','f'], 4)
+
+First, is the array of values meant to represent a count of specific pages to be accessed and maniplated via the instance of the helper class? And second, would the "items allowed per page" be for each "page" (element in the array), or for the entire array? The above example could be interpreted as "for each page in the array allow four items per page."
+
+I have to admit I was struggling to envision a real world example of how to design and implement a class based on the requirements provided. That is why I only have one method currently included in my TestNG suite.
+
+
+Part 2:
+
+I decided to base my code upon the Rest Assured library. The code will successfully create a new user with a distinct email address created during runtime. Based on the gorest.co.in site, I also added tests to listUsers() and getSpecificUser(). During the createUser Test, the code will deserialize (via Gson) to the JSONSuccessResponse class, and from that get the unique system generated id value which is then assigned to the private idField. The idField value is used for the getSpecificUser() method.
